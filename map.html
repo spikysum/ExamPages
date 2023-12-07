@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps Exam</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="./style.css">
+    <script src="response.js"></script>
+  </head>
+  <body>
+    <h2><p>Tokyo Restaurant aroud Tokyo Metropolitan Government</p></h2>
+    <div id="floating-panel">
+      <b>Type: </b>
+      <select id="foodType">
+        <option value="restaurant">all</option>
+        <option value="japanese_restaurant">Japanese restaurant</option>
+        <option value="spanish_restaurant">Spanish restaurant</option>
+        <option value="italian_restaurant">Italian restaurant</option>
+        <option value="korean_restaurant">Korean restaurant</option>
+        <option value="american_restaurant">American restaurant</option>
+      </select>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script type="text/javascript" src="map.js">
+    </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOKjkkCV0-2ARjPVbfPyPcsUCV__mmMlo&callback=initMap">
+    </script>
+    
+    <dl id="panel">
+      <dt>Restaurant Type</dt>
+      <dd><div id="restaurantTypes">Click Mark</div></dd>
+    </dl>
+ 
+    <script>
+    $(function() {
+      $('#panel > dd').hide();
+      $('#panel > dt')
+        .click(function(e){
+          $('+dd', this).slideToggle(100);
+        })
+    });
+    </script>
+
+  </body>
+</html>
